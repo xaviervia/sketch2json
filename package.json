@@ -10,9 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/xaviervia/sketch2json.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["sketch", "json", "design"],
+  "author": "Fernando Via Canel <fernando.via@gmail.com>",
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/xaviervia/sketch2json/issues"
   },
