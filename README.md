@@ -48,7 +48,9 @@ In the browser, it depends on how you read the file. If you get it from a [`File
 
 ## What is the structure of the contents of each file?
 
-As far as I know, there is no official documentation yet. Meanwhile this [structure information](https://gist.github.com/xaviervia/edbea95d321feacaf0b5d8acd40614b2) from my explorations might be handy.
+As far as I know, there is no official documentation yet.
+
+Meanwhile here you can find [Flowtype definitions for Sketch 43+ JSON](https://github.com/darknoon/sketchapp-json-flow-types/blob/master/types.js) by @darknoon to use as guide.
 
 ## Related
 
