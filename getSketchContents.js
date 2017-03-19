@@ -17,17 +17,16 @@ module.exports = fileData =>
     .map(parsedPairsList =>
       parsedPairsList
         .reduce((result, pair) => {
-            if (pair[0] === 'document.json') {
-              result.document = pair[1]
-            } else if (pair[0] === 'user.json') {
-              result.user = pair[1]
-            } else if (pair[0] === 'meta.json') {
-              result.meta = pair[1]
-            } else {
-              result.pages[pair[0].split('/')[1].slice(0, -5)] = pair[1]
-            }
+          if (pair[0] === 'document.json') {
+            result.document = pair[1]
+          } else if (pair[0] === 'user.json') {
+            result.user = pair[1]
+          } else if (pair[0] === 'meta.json') {
+            result.meta = pair[1]
+          } else {
+            result.pages[pair[0].split('/')[1].slice(0, -5)] = pair[1]
+          }
 
-            return result
-          }, {pages: {}}
-        )
+          return result
+        }, {pages: {}})
     )

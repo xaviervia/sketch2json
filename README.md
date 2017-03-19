@@ -4,6 +4,13 @@
 
 Get a JSON output out of a buffer of Sketch v43+ data (works both in Node and in the browser)
 
+Combined with the stylish [React JSON Tree](https://github.com/alexkuz/react-json-tree), you can inspect the Sketch file contents easily:
+
+[![https://xaviervia.github.io/sketch2json](demo.gif)](https://xaviervia.github.io/sketch2json)
+> Check out the live demo in [https://xaviervia.github.io/sketch2json](https://xaviervia.github.io/sketch2json)
+
+## Installation
+
 ```
 npm install --save sketch2json
 ```
@@ -34,6 +41,11 @@ The result will be an object structure like:
   }
 }
 ```
+
+### In the browser
+
+In the browser, it depends on how you read the file. If you get it from a [`FileReader`](https://developer.mozilla.org/en/docs/Web/API/FileReader) you will need to make sure to read it as an `ArrayBuffer`. The [implementation in the demo](demo/src/app.js) is a little complex but might be of help.
+
 ## What is the structure of the contents of each file?
 
 As far as I know, there is no official documentation yet. Meanwhile this [structure information](https://gist.github.com/xaviervia/edbea95d321feacaf0b5d8acd40614b2) from my explorations might be handy.

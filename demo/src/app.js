@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import JSONTree from 'react-json-tree'
 import sketch2json from 'sketch2json'
 
 export default class App extends Component {
@@ -7,43 +8,49 @@ export default class App extends Component {
 
     this.state = {
       dragging: false,
-      sources: [
-        Source('Example', `<h1 class='hello'>Drag HTML/SVG file(s) from your computer in here</h1>`)
-      ]
+      source: Source('Example', `Drop a Sketch (v43+) file in the header to inspect`)
     }
   }
 
   render () {
-    const {dragging, sources} = this.state
+    const {dragging, source} = this.state
 
-    return <main
-      className={dragging ? 'dragging' : ''}
-      onDragEnter={(e) => {
-        e.preventDefault()
-        this.setState({ dragging: true })
-      }}
-      onDragLeave={(e) => {
-        e.preventDefault()
-        this.setState({ dragging: false })
-      }}
-      onDragOver={(e) => {
-        e.preventDefault()
-        return false
-      }}
-      onDrop={handleDrop(this)}>
-      <pre className='text light-green'>
-        {sources.map(section)}
-      </pre>
+    return <main>
+      <header
+        onDragEnter={(e) => {
+          e.preventDefault()
+          this.setState({ dragging: true })
+        }}
+        onDragLeave={(e) => {
+          e.preventDefault()
+          this.setState({ dragging: false })
+        }}
+        onDragOver={(e) => {
+          e.preventDefault()
+          return false
+        }}
+        onDrop={handleDrop(this)}
+        style={{
+          backgroundColor: dragging ? 'black' : 'white',
+          color: dragging ? 'white' : 'black',
+          fontFamily: 'Lato, sans-serif',
+          padding: 20,
+          display: 'block',
+          width: '100%'
+        }}>
+        Drop a Sketch file in this header to inspect
+      </header>
+      <section
+        style={{
+          padding: 15
+        }}>
+        <JSONTree data={source} />
+      </section>
     </main>
   }
 }
 
-const Source = (name, code) => ({name, code})
-
-const section = ({name, code}, index) => <section key={index}>
-  <h2>{name}</h2>
-  {JSON.stringify(code)}
-</section>
+const Source = (name, code) => ({[name]: code})
 
 const handleDrop = (component) => (e) => {
   e.preventDefault()
@@ -59,7 +66,7 @@ const handleDrop = (component) => (e) => {
     reader.onload = handleFileRead(
       component,
       reader,
-      name.split('.')[0]
+      name
     )
     reader.readAsArrayBuffer(files[i])
   }
@@ -68,9 +75,6 @@ const handleDrop = (component) => (e) => {
 const handleFileRead = (component, reader, name) => () =>
   sketch2json(reader.result).then(data => {
     component.setState({
-      sources: [
-        ...component.state.sources,
-        Source(name, data)
-      ]
+      source: Source(name, data)
     })
   })
