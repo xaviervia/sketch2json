@@ -46,6 +46,18 @@ The result will be an object structure like:
 
 In the browser, it depends on how you read the file. If you get it from a [`FileReader`](https://developer.mozilla.org/en/docs/Web/API/FileReader) you will need to make sure to read it as an `ArrayBuffer`. The [implementation in the demo](demo/src/app.js) is a little complex but might be of help.
 
+### Get a Folktale Task monad instead of a Promise:
+
+```diff
+const fs = require('fs')
+const sketch2json = require('sketch2json')
+
+fs.readFile(__dirname + '/simple.sketch', (error, data) => {
+-  sketch2json(data).then(result => console.log(result))
++  sketch2json(data, {task: true}).map(result => console.log(result)).run()
+})
+```
+
 ## What is the structure of the contents of each file?
 
 As far as I know, there is no official documentation yet.
