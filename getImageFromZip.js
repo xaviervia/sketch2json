@@ -1,6 +1,4 @@
 const {task} = require('folktale/data/task')
-const Base64 = require('js-base64').Base64
-const fs = require('fs')
 
 // From https://gist.github.com/jonleighton/958841
 // thanks a lot
