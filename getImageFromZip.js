@@ -60,7 +60,17 @@ module.exports = (zip, path) =>
       .file(path)
       .async('arraybuffer')
       .then(function (content) {
-        resolve([path, `data:image/png;base64,${base64ArrayBuffer(content)}`])
+        if (path.slice(-4) === '.png') {
+          resolve([
+            path,
+            `data:image/png;base64,${base64ArrayBuffer(content)}`
+          ])
+        } else if (path.slice(-4) === '.jpg' || path.slice(-5) === '.jpeg') {
+          resolve([
+            path,
+            `data:image/jpeg;base64,${base64ArrayBuffer(content)}`
+          ])
+        }
       })
       .catch(function (error) {
         reject(error)
