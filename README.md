@@ -9,6 +9,7 @@ Combined with the stylish [React JSON Tree](https://github.com/alexkuz/react-jso
 [![https://xaviervia.github.io/sketch2json](demo.gif)](https://xaviervia.github.io/sketch2json)
 > Check out the live demo in [https://xaviervia.github.io/sketch2json](https://xaviervia.github.io/sketch2json)
 
+You can also run this from the command like with the [sketchy](https://github.com/kristianmandrup/sketchy) package.
 ## Installation
 
 ```
