@@ -1,4 +1,4 @@
-const getFileFromZip = require('../getFileFromZip')
+const getJSONFromZip = require('../getJSONFromZip')
 const getZipContents = require('../getZipContents')
 const fs = require('fs')
 
@@ -8,7 +8,7 @@ module.exports = [
     test: check => {
       fs.readFile(__dirname + '/fixtures/content.zip', (error, data) => {
         getZipContents(data)
-          .chain(zip => getFileFromZip(zip, 'content.json'))
+          .chain(zip => getJSONFromZip(zip, 'content.json'))
           .map(pair => {
             check(pair)
           })
