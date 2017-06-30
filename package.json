@@ -1,6 +1,6 @@
 {
   "name": "sketch2json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Get a JSON output out of a buffer of Sketch v43+ data (works both in Node and in the browser)",
   "main": "sketch2json.js",
   "scripts": {
@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/xaviervia/sketch2json.git"
   },
-  "keywords": ["sketch", "json", "design"],
+  "keywords": [
+    "sketch",
+    "json",
+    "design"
+  ],
   "author": "Fernando Via Canel <fernando.via@gmail.com>",
   "license": "Unlicense",
   "bugs": {
