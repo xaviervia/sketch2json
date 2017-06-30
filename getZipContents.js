@@ -1,5 +1,5 @@
 const JSZip = require('jszip')
-const {task} = require('folktale/data/task')
+const {task} = require('folktale/concurrency/task')
 
 module.exports = (zippedFolder) =>
   task(({resolve, reject}) =>
