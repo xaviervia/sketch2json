@@ -36,10 +36,6 @@ escape-string-regexp@^1.0.2:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-folktale@^2.0.0-alpha2:
-  version "2.0.0-alpha3"
-  resolved "https://registry.yarnpkg.com/folktale/-/folktale-2.0.0-alpha3.tgz#45f51feb486f00aa3d1d6f0f51eb45406c344899"
-
 folktale@^v2.0.0-rc1:
   version "2.0.0-rc1"
   resolved "https://registry.yarnpkg.com/folktale/-/folktale-2.0.0-rc1.tgz#887a54095612e65d597c1b3ba3d3a4707488f672"
@@ -133,26 +129,26 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
-washington.core@^2.0.0-rc.2:
-  version "2.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/washington.core/-/washington.core-2.0.0-rc.2.tgz#e4569ef391dfb02e2652d7c0f1178445d8880285"
+washington.core@^2.0.0-rc.3:
+  version "2.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/washington.core/-/washington.core-2.0.0-rc.3.tgz#e9b52f736f177961fa962160f9810d4068c2db01"
   dependencies:
-    folktale "^2.0.0-alpha2"
+    folktale "^v2.0.0-rc1"
     immutable "^3.8.1"
     immutable-ext "^1.0.8"
     partial.lenses "^9.4.1"
 
-washington.formatter.terminal@^2.0.0-rc.2:
-  version "2.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/washington.formatter.terminal/-/washington.formatter.terminal-2.0.0-rc.2.tgz#1852253555eb562ea9ef57f67cb69d88f315867b"
+washington.formatter.terminal@^2.0.0-rc.3:
+  version "2.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/washington.formatter.terminal/-/washington.formatter.terminal-2.0.0-rc.3.tgz#da80f5a8faa4d56a6d7297783e55d657c41e7417"
   dependencies:
     chalk "^1.1.3"
-    folktale "^2.0.0-alpha2"
+    folktale "^v2.0.0-rc1"
     partial.lenses "^9.4.1"
 
-washington@^2.0.0-rc.2:
-  version "2.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/washington/-/washington-2.0.0-rc.2.tgz#2b219f8abb3da53f636201a4f7bf4e91a2c7b2ba"
+washington@^2.0.0-rc.3:
+  version "2.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/washington/-/washington-2.0.0-rc.3.tgz#40d40ef0dde10563f9f469e8ed38a25feae1baf7"
   dependencies:
-    washington.core "^2.0.0-rc.2"
-    washington.formatter.terminal "^2.0.0-rc.2"
+    washington.core "^2.0.0-rc.3"
+    washington.formatter.terminal "^2.0.0-rc.3"

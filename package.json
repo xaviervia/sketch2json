@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/xaviervia/sketch2json#readme",
   "devDependencies": {
-    "washington": "^2.0.0-rc.2"
+    "washington": "^2.0.0-rc.3"
   },
   "dependencies": {
     "folktale": "^v2.0.0-rc1",
