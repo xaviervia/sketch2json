@@ -36,9 +36,13 @@ escape-string-regexp@^1.0.2:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-folktale@^2.0.0-alpha2, folktale@^2.0.0-alpha3:
+folktale@^2.0.0-alpha2:
   version "2.0.0-alpha3"
   resolved "https://registry.yarnpkg.com/folktale/-/folktale-2.0.0-alpha3.tgz#45f51feb486f00aa3d1d6f0f51eb45406c344899"
+
+folktale@^v2.0.0-rc1:
+  version "2.0.0-rc1"
+  resolved "https://registry.yarnpkg.com/folktale/-/folktale-2.0.0-rc1.tgz#887a54095612e65d597c1b3ba3d3a4707488f672"
 
 has-ansi@^2.0.0:
   version "2.0.0"

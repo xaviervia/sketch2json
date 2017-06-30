@@ -1,4 +1,4 @@
-const {task} = require('folktale/data/task')
+const {task} = require('folktale/concurrency/task')
 
 module.exports = (zip, path) =>
   task(({resolve, reject}) =>

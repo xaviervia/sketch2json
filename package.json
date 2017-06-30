@@ -21,7 +21,7 @@
     "washington": "^2.0.0-rc.2"
   },
   "dependencies": {
-    "folktale": "^2.0.0-alpha3",
+    "folktale": "^v2.0.0-rc1",
     "immutable": "^3.8.1",
     "immutable-ext": "^1.0.8",
     "jszip": "^3.1.3"

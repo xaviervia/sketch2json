@@ -1,4 +1,4 @@
-const Task = require('folktale/data/task')
+const Task = require('folktale/concurrency/task')
 const {List} = require('immutable-ext')
 const getZipContents = require('./getZipContents')
 const getFileFromZip = require('./getFileFromZip')
