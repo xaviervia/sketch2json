@@ -40,5 +40,21 @@ module.exports = [
       '0F364A54-A488-4D6F-BAA4-F93FB057C5A3': {"_class":"page","do_objectID":"0F364A54-A488-4D6F-BAA4-F93FB057C5A3","exportOptions":{"_class":"exportOptions","exportFormats":[],"includedLayerIds":[],"layerOptions":0,"shouldTrim":false},"frame":{"_class":"rect","constrainProportions":false,"height":300,"width":300,"x":0,"y":0},"isFlippedHorizontal":false,"isFlippedVertical":false,"isLocked":false,"isVisible":true,"layerListExpandedType":0,"name":"Page 1","nameIsFixed":false,"resizingType":0,"rotation":0,"shouldBreakMaskChain":false,"style":{"_class":"style","endDecorationType":0,"miterLimit":10,"startDecorationType":0},"hasClickThrough":true,"layers":[{"_class":"artboard","do_objectID":"6A7B057C-5BCD-48D5-A0E9-E43B9799335C","exportOptions":{"_class":"exportOptions","exportFormats":[],"includedLayerIds":[],"layerOptions":0,"shouldTrim":false},"frame":{"_class":"rect","constrainProportions":false,"height":265,"width":267,"x":231,"y":163},"isFlippedHorizontal":false,"isFlippedVertical":false,"isLocked":false,"isVisible":true,"layerListExpandedType":0,"name":"Artboard","nameIsFixed":false,"resizingType":0,"rotation":0,"shouldBreakMaskChain":false,"style":{"_class":"style","endDecorationType":0,"miterLimit":10,"startDecorationType":0},"hasClickThrough":false,"layers":[],"backgroundColor":{"_class":"color","alpha":1,"blue":1,"green":1,"red":1},"hasBackgroundColor":false,"horizontalRulerData":{"_class":"rulerData","base":0,"guides":[]},"includeBackgroundColorInExport":true,"includeInCloudUpload":true,"verticalRulerData":{"_class":"rulerData","base":0,"guides":[]}}],"horizontalRulerData":{"_class":"rulerData","base":0,"guides":[]},"includeInCloudUpload":true,"verticalRulerData":{"_class":"rulerData","base":0,"guides":[]}},
       '7BEBFBF7-DD75-41E2-8882-51A6E354169A': {"_class":"page","do_objectID":"7BEBFBF7-DD75-41E2-8882-51A6E354169A","exportOptions":{"_class":"exportOptions","exportFormats":[],"includedLayerIds":[],"layerOptions":0,"shouldTrim":false},"frame":{"_class":"rect","constrainProportions":false,"height":300,"width":300,"x":0,"y":0},"isFlippedHorizontal":false,"isFlippedVertical":false,"isLocked":false,"isVisible":true,"layerListExpandedType":0,"name":"Page 2","nameIsFixed":false,"resizingType":0,"rotation":0,"shouldBreakMaskChain":false,"style":{"_class":"style","endDecorationType":0,"miterLimit":10,"startDecorationType":0},"hasClickThrough":true,"layers":[{"_class":"artboard","do_objectID":"F8A0B4CA-D6D0-437A-B981-916117DD2D11","exportOptions":{"_class":"exportOptions","exportFormats":[],"includedLayerIds":[],"layerOptions":0,"shouldTrim":false},"frame":{"_class":"rect","constrainProportions":false,"height":203,"width":356,"x":-84,"y":-76},"isFlippedHorizontal":false,"isFlippedVertical":false,"isLocked":false,"isVisible":true,"layerListExpandedType":0,"name":"Artboard","nameIsFixed":false,"resizingType":0,"rotation":0,"shouldBreakMaskChain":false,"style":{"_class":"style","endDecorationType":0,"miterLimit":10,"startDecorationType":0},"hasClickThrough":false,"layers":[],"backgroundColor":{"_class":"color","alpha":1,"blue":1,"green":1,"red":1},"hasBackgroundColor":false,"horizontalRulerData":{"_class":"rulerData","base":0,"guides":[]},"includeBackgroundColorInExport":true,"includeInCloudUpload":true,"verticalRulerData":{"_class":"rulerData","base":0,"guides":[]}}],"horizontalRulerData":{"_class":"rulerData","base":-346,"guides":[]},"includeInCloudUpload":true,"verticalRulerData":{"_class":"rulerData","base":-193,"guides":[]}}
     }
+  },
+  {
+    description: 'fails on invalid file',
+    test: check => {
+      fs.readFile(__dirname + '/fixtures/invalid.sketch', (error, data) => {
+        let err = null;
+
+        sketch2json(data)
+          .catch(error => (err = error))
+
+        setTimeout(() => {
+          check(err !== null)
+        }, 100)
+      })
+    },
+    shouldEqual: true
   }
 ]
