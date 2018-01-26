@@ -1,6 +1,6 @@
 {
   "name": "sketch2json",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Get a JSON output out of a buffer of Sketch v43+ data (works both in Node and in the browser)",
   "main": "sketch2json.js",
   "scripts": {
